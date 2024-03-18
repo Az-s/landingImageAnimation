@@ -35,7 +35,7 @@ const TestPage = () => {
             position: relative;
             min-height: 150vh;
             background: black;
-            padding-top: 1vh; /* Add padding to create space for sticky positioning */
+            padding-top: 1vh;
           }
           .image-container img {
             position: sticky;
@@ -53,8 +53,13 @@ const TestPage = () => {
         >
           Вкусные бонусы
         </motion.h1>
-        <motion.di
-          style={{ display: "flex", position: "sticky", top: "20rem" }}
+        <motion.div
+          style={{
+            display: "flex",
+            position: "sticky",
+            top: "20rem",
+            justifyContent: "center",
+          }}
         >
           <motion.img
             src={mugImage}
@@ -79,9 +84,8 @@ const TestPage = () => {
             animate={{ opacity: opacity, scale: scale }}
             transition={{ duration: 0.5 }}
           />
-        </motion.di>
+        </motion.div>
       </div>
-
       <div style={{ height: "100vh", backgroundColor: "#fff" }}>
         <p style={{ textAlign: "center", paddingTop: "50px" }}>Второй блок</p>
       </div>
