@@ -80,6 +80,7 @@ const FramerPage = () => {
         >
           <motion.img
             src={mugImage}
+            // пример как сделать сслыку src="ссылка" 
             alt="Image 1"
             style={{
               opacity: opacity,
@@ -95,6 +96,7 @@ const FramerPage = () => {
           />
           <motion.img
             src={phoneImage}
+            // пример как сделать сслыку src="ссылка"  
             alt="Image 3"
             style={imageStyle}
             animate={{ scale: scale2 }}
@@ -102,6 +104,7 @@ const FramerPage = () => {
           />
           <motion.img
             src={coinImage}
+            // пример как сделать сслыку src="ссылка" 
             alt="Image 2"
             style={{
               opacity: opacity,
