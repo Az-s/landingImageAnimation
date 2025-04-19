@@ -115,7 +115,6 @@
     }
   
     .right img {
-      margin-bottom: 16px;
       width: 80%;
       max-width: 300px;
       height: auto;
@@ -133,6 +132,7 @@
       flex-direction: column;
       align-items: center;
       order: 4;
+      max-height: 100%;
     }
   
     .text {
@@ -154,17 +154,18 @@
       height: auto;
       gap: 10px;
       padding-bottom: 20px;
+      max-width: 300px;
     }
   
     .image img {
-      width: 100px;
+      width: 140px;
       height: auto;
     }
   
     .left {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 60px;
     }
   
     .left img {
