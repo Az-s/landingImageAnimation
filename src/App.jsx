@@ -1,16 +1,12 @@
-
 import "./App.css";
-// import TestPage from "./components/TestPage";
-import FramerPage from "./components/FramerPage";
-// import TestTwo from './components/TestTwo';
+import AnimationPage from "./components/AnimationPage";
+import SaotaBlock from "./components/SaotaBlock";
 
 function App() {
-
   return (
     <>
-      <FramerPage />
-      {/* <TestPage /> */}
-      {/* <TestTwo /> */}
+      <AnimationPage />
+      <SaotaBlock />
     </>
   );
 }

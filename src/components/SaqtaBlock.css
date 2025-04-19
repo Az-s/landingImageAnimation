@@ -1,0 +1,254 @@
+/* ---------- Other block ---------- */
+
+.background {
+    height: 800px;
+    background: url("./assets/vegetables.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
+    padding-top: 195px;
+    font-family: Inter;
+  }
+  
+  .container {
+    display: flex;
+    flex: 1;
+    max-width: 1200px;
+  }
+  
+  .right {
+    /* flex: 1; */
+    flex-direction: column;
+    /* padding: 20px; */
+    color: #000;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: left;
+    max-width: 745px;
+    padding-left: 60px;
+  }
+  
+  .right p {
+    padding-top: 32px;
+    gap: 32px;
+    max-width: 665px;
+  }
+  
+  .right span {
+    color: #67a860;
+  }
+  
+  .left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .left img {
+    max-width: 393px;
+    height: auto;
+  }
+  
+  .bottom {
+    display: flex;
+    padding: 71px 0px 65px;
+    max-height: 200px;
+  }
+  
+  .text {
+    flex: 1;
+    color: #79797980;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Текст начнется снизу */
+    height: 100%; /* Задаем высоту */
+    white-space: pre-wrap; /* Для переносов строк */
+  }
+  
+  .text p {
+    margin: 0; /* Убираем отступы */
+    word-break: break-word;
+    padding-right: 41px; /* Переносим длинные слова */
+  }
+  
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 200px;
+    max-height: 200px;
+    margin-top: auto; /* Отталкиваем изображения вниз */
+  }
+  
+  .image img {
+    max-width: 100px;
+    height: auto;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 32px;
+      padding: 15px;
+    }
+  
+    .right img {
+      margin-bottom: 16px;
+      width: 80%;
+      max-width: 300px;
+      height: auto;
+      order: 1;
+    }
+  
+    .right p {
+      font-size: 28px;
+      line-height: 1.3;
+      order: 2;
+    }
+  
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order: 4;
+    }
+  
+    .text {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 10px;
+      white-space: nowrap; /* Убираем переносы строк */
+    }
+  
+    .text p {
+      padding: 15px;
+    }
+  
+    .image {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: auto;
+      gap: 10px;
+      padding-bottom: 20px;
+    }
+  
+    .image img {
+      width: 100px;
+      height: auto;
+    }
+  
+    .left {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  
+    .left img {
+      max-width: 250px;
+      height: auto;
+      order: 3;
+    }
+  }
+  
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+  
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 32px;
+      padding: 15px;
+    }
+  
+    .right img {
+      margin-bottom: 16px;
+      width: 80%;
+      max-width: 300px;
+      height: auto;
+      order: 1;
+    }
+  
+    .right p {
+      font-size: 28px;
+      line-height: 1.3;
+      order: 2;
+    }
+  
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order: 4;
+    }
+  
+    .text {
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 10px;
+      white-space: nowrap; /* Убираем переносы строк */
+    }
+  
+    .text p {
+      padding: 15px;
+    }
+  
+    .image {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      width: 250px;
+      padding-bottom: 20px;
+    }
+  
+    .image img {
+      width: 100px;
+      height: auto;
+      margin: 0;
+    }
+  
+    .left {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+  
+    .left img {
+      max-width: 250px;
+      height: auto;
+      order: 3;
+    }
+  }
+  
