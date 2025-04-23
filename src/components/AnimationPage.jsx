@@ -7,7 +7,7 @@ import imageTwo from "../assets/2.png";
 import imageTwelve from "../assets/12.png";
 import imageThirteen from "../assets/13.png";
 import imageSeventeen from "../assets/17.png";
-import SaqtaImg from "../assets/SaqtaLogo.png";
+import SaqtaImg from "../assets/logo_saqta.png";
 import "../App.css";
 
 const AnimationPage = () => {
@@ -104,9 +104,9 @@ const AnimationPage = () => {
           </motion.div>
         )}
       </motion.div>
-      <div className="second-block">
+      {/* <div className="second-block">
         <p>Второй блок</p>
-      </div>
+      </div> */}
     </>
   );
 };

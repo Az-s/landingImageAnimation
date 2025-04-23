@@ -45,20 +45,21 @@
 .logoSaqta {
   padding-top: 50px;
   padding-bottom: 50px;
+  max-width: 250px;
 }
 
 .fade-header {
   text-align: center;
-  font-size: 32px;
+  font-size: 44px;
   font-weight: bold;
   color: white;
-  padding-top: 50px;
+  padding-top: 0px;
   padding-bottom: 50px;
 }
 
 .fade-header span {
   color: #67a860;
-  font-size: 32px;
+  font-size: 42px;
   font-weight: bold;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -106,7 +107,7 @@
 /* Медиазапросы для планшетов (768px и выше) */
 @media screen and (min-width: 768px) {
   .fade-header {
-    font-size: 40px;
+    font-size: 60px;
     padding-top: 60px;
     padding-bottom: 60px;
   }
@@ -168,10 +169,18 @@
 }
 
 @media screen and (min-width: 1400px) {
-  .fade-header {
-    font-size: 48px;
-    padding-top: 70px;
-    padding-bottom: 70px;
+
+  .logoSaqta {
+    max-width: 500px;
+  }
+
+  .fade-header  {
+    font-size: 72px;
+    padding-top: 25px;
+  }
+
+  .fade-header span {
+    font-size: 70px;
   }
 
   .mug-image {
