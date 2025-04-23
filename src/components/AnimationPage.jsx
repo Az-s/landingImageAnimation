@@ -44,9 +44,12 @@ const AnimationPage = () => {
     controls.start({ backgroundColor: background });
   }, [background, controls]);
 
-  const opacity = scrollY <= 80 ? 1 : scrollY <= 160 ? 0.53 : 0.02;
-  const scale = scrollY <= 80 ? 1 : scrollY <= 160 ? 0.765 : 0.51;
+  const opacity3 = scrollY <= 80 ? 1 : scrollY <= 160 ? 0.53 : 0.02;
+  const scale3 = scrollY <= 80 ? 1 : scrollY <= 160 ? 0.765 : 0.51;
   const scale2 = scrollY <= 10 ? 1 : scrollY <= 80 ? 0.765 : 0.765;
+
+  const opacity = scrollY <= 80 ? 0 : scrollY <= 160 ? 0.5 : 1;
+  const scale = scrollY <= 80 ? 0 : scrollY <= 160 ? 0.6 : 1;
 
   return (
     <>
@@ -59,7 +62,7 @@ const AnimationPage = () => {
         <motion.img src={SaqtaImg} alt="Saqta" className="logoSaqta"/>
         <motion.h1
           className="fade-header"
-          whileInView={{ opacity: opacity, scale: scale }}
+          whileInView={{ opacity: opacity3, scale: scale3 }}
           transition={{ duration: 0.4 }}
         >
           Отличная еда <span> <br /> по отличной цене</span>
