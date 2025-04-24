@@ -8,6 +8,7 @@ import imageTwelve from "../assets/12.png";
 import imageThirteen from "../assets/13.png";
 import imageSeventeen from "../assets/17.png";
 import SaqtaImg from "../assets/logo_saqta.png";
+import SendEmail from "./SendEmail";
 import "../App.css";
 
 const AnimationPage = () => {
@@ -107,9 +108,9 @@ const AnimationPage = () => {
           </motion.div>
         )}
       </motion.div>
-      {/* <div className="second-block">
-        <p>Второй блок</p>
-      </div> */}
+      <div className="second-block">
+        <SendEmail />
+      </div>
     </>
   );
 };

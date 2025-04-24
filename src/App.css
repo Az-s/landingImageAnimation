@@ -95,8 +95,8 @@
 
 .second-block {
   height: 100vh;
-  background-color: black;
-  color: white;
+  color: black;
+  background-color: rgb(247, 242, 242);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -205,4 +205,58 @@
   .new-elements p {
     font-size: 40px;
   }
+}
+/* Email send card */
+.send-email-card {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f3f3f3, #e8e8e8);
+}
+
+.send-email-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.email-input {
+  width: 100%;
+  padding: 10px 15px; /* Increased horizontal padding */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 4px #007BFF;
+}
+
+
+.send-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background: #007BFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.send-button:hover {
+  background: #0056b3;
+}
+
+.send-button:active {
+  transform: scale(0.95);
 }
