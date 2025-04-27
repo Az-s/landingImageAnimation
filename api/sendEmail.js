@@ -1,41 +1,47 @@
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ message: "Method Not Allowed" });
+  // Обработка preflight-запроса (OPTIONS)
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Origin', '*'); // или конкретный домен вместо '*'
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.status(200).end();
+    return;
+  }
+
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
   const email = req.body.email || req.query.email;
 
   if (!email) {
-    return res.status(400).json({ message: "Email is required" });
+    return res.status(400).json({ message: 'Email is required' });
   }
 
-  // Создаем транспортер для Gmail
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: 'gmail',
     auth: {
-      user: process.env.GMAIL_USER, // Твоя почта
-      pass: process.env.GMAIL_PASS, // Пароль приложения
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
     },
   });
 
   try {
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, // себе на почту
-      subject: "Новый email для Saqta от пользователя",
+      to: process.env.GMAIL_USER,
+      subject: 'Новый email для Saqta от пользователя',
       text: `Пользователь оставил email: ${email}`,
     });
 
-    // Добавляем CORS заголовки
-    res.setHeader("Access-Control-Allow-Origin", "*"); // Разрешаем запросы с любого домена
-    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS"); // Разрешаем методы POST и OPTIONS
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Разрешаем заголовок Content-Type
-
-    res.status(200).json({ message: "Email успешно отправлен!" });
+    res.setHeader('Access-Control-Allow-Origin', '*'); // Чтобы ответ тоже разрешал CORS
+    res.status(200).json({ message: 'Email успешно отправлен!' });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Ошибка при отправке письма" });
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.status(500).json({ message: 'Ошибка при отправке письма' });
   }
 }

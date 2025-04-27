@@ -8,16 +8,23 @@ const SendEmail = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("email", email);
     try {
-      const response = await fetch(
-        "https://landing-image-animation.vercel.app//api/sendEmail", // ⬅️ вот сюда правильный URL
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch('https://landing-image-animation.vercel.app/api/sendEmail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+    // try {
+    //   const response = await fetch(
+    //     "https://landing-image-animation.vercel.app//api/sendEmail", 
+    //     {
+    //       method: "POST",
+    //       body: formData,
+    //     }
+    //   );
 
       if (!response.ok) {
         throw new Error(`Ошибка сети: ${response.status}`);
