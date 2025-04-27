@@ -28,10 +28,14 @@ export default async function handler(req, res) {
       text: `Пользователь оставил email: ${email}`,
     });
 
+    // Добавляем CORS заголовки
+    res.setHeader("Access-Control-Allow-Origin", "*"); // Разрешаем запросы с любого домена
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS"); // Разрешаем методы POST и OPTIONS
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type"); // Разрешаем заголовок Content-Type
+
     res.status(200).json({ message: "Email успешно отправлен!" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Ошибка при отправке письма" });
   }
 }
-
