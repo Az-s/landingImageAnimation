@@ -17,20 +17,11 @@ const SendEmail = () => {
         body: JSON.stringify({ email }),
       });
 
-    // try {
-    //   const response = await fetch(
-    //     "https://landing-image-animation.vercel.app//api/sendEmail", 
-    //     {
-    //       method: "POST",
-    //       body: formData,
-    //     }
-    //   );
-
       if (!response.ok) {
         throw new Error(`Ошибка сети: ${response.status}`);
       }
 
-      toast.error(`Email успешно отправлен!`);
+      toast.success(`Email успешно отправлен!`);
     } catch (error) {
       console.error("Ошибка:", error);
       toast.error(`Не удалось отправить email.`);
