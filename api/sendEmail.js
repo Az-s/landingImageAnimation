@@ -1,10 +1,9 @@
 import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
-  // Обработка preflight-запроса (OPTIONS)
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Credentials', 'true');
-    res.setHeader('Access-Control-Allow-Origin', '*'); // или конкретный домен вместо '*'
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.status(200).end();
@@ -15,7 +14,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const email = req.body.email || req.query.email;
+  const { email } = req.body;
 
   if (!email) {
     return res.status(400).json({ message: 'Email is required' });
@@ -37,7 +36,7 @@ export default async function handler(req, res) {
       text: `Пользователь оставил email: ${email}`,
     });
 
-    res.setHeader('Access-Control-Allow-Origin', '*'); // Чтобы ответ тоже разрешал CORS
+    res.setHeader('Access-Control-Allow-Origin', '*');
     res.status(200).json({ message: 'Email успешно отправлен!' });
   } catch (error) {
     console.error(error);
@@ -45,3 +44,4 @@ export default async function handler(req, res) {
     res.status(500).json({ message: 'Ошибка при отправке письма' });
   }
 }
+
