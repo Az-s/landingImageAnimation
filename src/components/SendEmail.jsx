@@ -8,22 +8,21 @@ const SendEmail = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("email", email);
     try {
       const response = await fetch(
-        "https://your-vercel-project.vercel.app/api/sendEmail",
+        "https://your-vercel-project.vercel.app/api/sendEmail", // ⬅️ вот сюда правильный URL
         {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email }),
+          body: formData,
         }
       );
 
       if (!response.ok) {
-        throw new Error("Ошибка сети");
+        throw new Error(`Ошибка сети: ${response.status}`);
       }
-
+      
       toast.error(`Email успешно отправлен!`);
     } catch (error) {
       console.error("Ошибка:", error);
